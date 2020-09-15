@@ -1,7 +1,11 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 .hero-search-filter {
-    background: url("https://images.pexels.com/photos/115095/pexels-photo-115095.jpeg?w=940&h=650&auto=compress&cs=tinysrgb") center center no-repeat;
-    height: 300px;
+    background: url("https://mocah.org/uploads/posts/5318712-concert-performance-silhouette-band-stage-festival-black-and-white-audience-musician-instrument-sony-moderat-pattern-light-creative-commons-images.jpg") center center no-repeat;
+    height: 600px;
     background-size: cover;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -13,6 +17,7 @@
   
   .hero-search-filter-logo {
     margin-bottom: 2rem;
+    height: 100px;
   }
   
   .hero-search-filter-content {
