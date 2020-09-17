@@ -1,6 +1,5 @@
 
 
-
 function searchArtists(artist) {
 
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
@@ -11,9 +10,7 @@ function searchArtists(artist) {
     }).then(function (response) {
         console.log(response);
 
-
-        var artistName = $("<h1>").text(response.name);
-        var upcomingEvents = $("<h1>").text(response.upcoming_event_count + " upcoming events");
+        var upcomingEvents = $("<h1>").text(response.upcoming_event_count + " Upcoming Events");
         var gotoArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
 
         // Empty the contents, append the new artist content
@@ -22,7 +19,7 @@ function searchArtists(artist) {
     })
 };
 
-$("#searchButton").on("click", function () {
+$("#button").on("click", function () {
     event.preventDefault();
     var inputArtist = $("#findtext").val().trim();
 
