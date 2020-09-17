@@ -19,7 +19,7 @@ function searchArtists(artist) {
     })
 };
 
-$("#button").on("click", function () {
+$("#searchButton").on("click", function () {
     event.preventDefault();
     var inputArtist = $("#findtext").val().trim();
 
