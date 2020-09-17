@@ -124,3 +124,8 @@ body {
     font-weight: bold;
     font-size: 36px;
   }
+ 
+  #artist {
+    color: white;
+    text-align: center;
+  }
