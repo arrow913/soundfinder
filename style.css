@@ -137,3 +137,7 @@ body {
     color: white;
     text-align: center;
   }
+
+  #findtext {
+    width: 90%;
+  }
