@@ -119,4 +119,7 @@ body {
     box-shadow: none;
   }
   
-  
+  #artist {
+    color: white;
+    text-align: center;
+  }
