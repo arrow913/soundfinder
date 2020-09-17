@@ -10,13 +10,12 @@ function searchArtists(artist) {
     }).then(function (response) {
         console.log(response);
 
-        var artistName = $("<h1>").text(response.name);
         var upcomingEvents = $("<h1>").text(response.upcoming_event_count + " Upcoming Events");
         var gotoArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
 
         // Empty the contents, append the new artist content
         $("#artist").empty();
-        $("#artist").append(artistName, upcomingEvents, gotoArtist);
+        $("#artist").append(upcomingEvents, gotoArtist);
     })
 };
 
