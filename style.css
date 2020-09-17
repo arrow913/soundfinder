@@ -17,7 +17,14 @@ body {
   
   .hero-search-filter-logo {
     margin-bottom: 2rem;
-    height: 100px;
+    height: 200px;
+  }
+
+  .info {
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+    font: outline;
   }
   
   .hero-search-filter-content {
@@ -119,4 +126,13 @@ body {
     box-shadow: none;
   }
   
-  
+  .searchby {
+    color: #fefefe;
+    font-weight: bold;
+    font-size: 36px;
+  }
+ 
+  #artist {
+    color: white;
+    text-align: center;
+  }
