@@ -19,6 +19,13 @@ body {
     margin-bottom: 2rem;
     height: 200px;
   }
+
+  .info {
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+    font: outline;
+  }
   
   .hero-search-filter-content {
     display: -webkit-flex;
