@@ -8,7 +8,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-
 </head>
 
 <body>
@@ -18,10 +17,10 @@
             <div class=info>
                 <p>Search with your favorite artists, movies, or TV shows to find new things to check out!</p>
             </div>
-            <form class="hero-search-filter-form" action="">
+            <form class="hero-search-filter-form">
                 <label for="findtext">Find</label>
                 <input id="findtext" class="hero-search-filter-form-find" type="text" />
-                <button class="button"><i class="fa fa-search"></i></button>
+                <button class="button" id="searchButton"><i class="fa fa-search"></i></button>
             </form>
             <ul class="hero-search-filter-menu menu align-center">
                 <div class="searchby">Search by:</div>
@@ -67,10 +66,13 @@
     </div>
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src='main.js'></script>
-    <script src="https://kit.fontawesome.com/0d65042968.js" crossorigin="anonymous"></script>
+
+  <div id="artist"></div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src='main.js'></script>
+  <script src="https://kit.fontawesome.com/0d65042968.js" crossorigin="anonymous"></script>
+
 </body>
 
 
