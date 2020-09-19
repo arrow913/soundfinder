@@ -1,22 +1,33 @@
 
 function searchArtists(artist) {
+    $("#results").empty();
+    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
 
-  var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
-
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function (response) {
-    console.log(response);
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
 
 
-    var upcomingEvents = $("<h1>").text(response.upcoming_event_count + " Upcoming Events");
-    var gotoArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+        var upcomingEvents = $("<h1>").text(response.upcoming_event_count + " Upcoming Events");
+        var gotoArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
 
-    // Empty the contents, append the new artist content
-    $("#artist").empty();
-    $("#artist").append(upcomingEvents, gotoArtist);
+        // Append the new artist content
+        $("#results").append(upcomingEvents, gotoArtist);
 
+
+        var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-williama-NJI189T2";
+        $.ajax({
+            url: queryURLA,
+            dataType: "jsonp",
+            method: "GET"
+        }).then(function (response) {
+            $("#results").empty();
+            var count = 5
+            for (var i = 0; i < count; i++) {
+                console.log(response.Similar.Results[i].Name);
+                var results = $("<ul>").text(response.Similar.Results[i].Name);
 
     var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-williama-NJI189T2";
     $.ajax({
@@ -38,11 +49,16 @@ function searchArtists(artist) {
         $("#results").append(upcomingEvents, gotoArtist);
     });
 
+            // Empty the contents, append the new artist content
+            
+            $("#results").append(upcomingEvents, gotoArtist);
+        });
+    });
     // Youtube API Call
     var youtubeApiKey = "AIzaSyBmk_5NIy0Lqp_6usUzPRx-pD3Zk-LRXHY";
 
     var queryURL2 = "https://www.googleapis.com/youtube/v3/search" + "?part=snippet&q=" + artist + "&type=video&videoCaption=closedCaption&key=" + youtubeApiKey;
-    $("#results").empty();
+
     $.ajax({
         url: queryURL2,
         method: "GET"
@@ -56,11 +72,9 @@ function searchArtists(artist) {
 
     });
 };
-    })
-  })
-}
 
-   $("#searchButton").on("click", function () {
+
+$("#searchButton").on("click", function () {
     event.preventDefault();
     var inputArtist = $("#findtext").val().trim();
 
