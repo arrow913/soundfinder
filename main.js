@@ -64,8 +64,9 @@ function searchArtists(artist) {
         method: "GET"
     }).then(function (response) {
         console.log(response);
-
-        var iframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${response.items[0].id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        var videoid = response.items[0].id.videoId
+        console.log(videoid)
+        var iframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoid}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
         // Empty the contents, append the new video
         $("#results").append(iframe);
