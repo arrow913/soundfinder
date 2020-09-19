@@ -1,5 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #4F4F51;
 }
 
 
@@ -17,7 +18,14 @@ body {
   
   .hero-search-filter-logo {
     margin-bottom: 2rem;
-    height: 100px;
+    height: 200px;
+  }
+
+  .info {
+    font-size: medium;
+    color: white;
+    font-weight: bold;
+    font: outline;
   }
   
   .hero-search-filter-content {
@@ -123,4 +131,13 @@ body {
     color: #fefefe;
     font-weight: bold;
     font-size: 36px;
+  }
+
+  #artist {
+    color: white;
+    text-align: center;
+  }
+
+  #findtext {
+    width: 90%;
   }

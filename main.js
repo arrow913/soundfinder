@@ -1,43 +1,68 @@
 
-
-
 function searchArtists(artist) {
+    $("#results").empty();
+    var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
 
-  var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
-
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function (response) {
-    console.log(response);
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
 
 
-    var artistName = $("<h1>").text(response.name);
-    var artistURL = $("<a>").attr("href", response.url).append(artistName);
-    var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
-    var gotoArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+        var upcomingEvents = $("<h1>").text(response.upcoming_event_count + " Upcoming Events");
+        var gotoArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
 
-    // Empty the contents, append the new artist content
-    $("#artist").empty();
-    $("#artist").append(artistURL, upcomingEvents, gotoArtist);
-  })
+        // Append the new artist content
+        $("#results").append(upcomingEvents, gotoArtist);
+
+
+        var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-williama-NJI189T2";
+        $.ajax({
+            url: queryURLA,
+            dataType: "jsonp",
+            method: "GET"
+        }).then(function (response) {
+            $("#results").empty();
+            var count = 5
+            for (var i = 0; i < count; i++) {
+                console.log(response.Similar.Results[i].Name);
+                var results = $("<ul>").text(response.Similar.Results[i].Name);
+
+                $("#results").append(results);
+            }
+
+            // Empty the contents, append the new artist content
+            
+            $("#results").append(upcomingEvents, gotoArtist);
+        });
+    });
+    // Youtube API Call
+    var youtubeApiKey = "AIzaSyBmk_5NIy0Lqp_6usUzPRx-pD3Zk-LRXHY";
+
+    var queryURL2 = "https://www.googleapis.com/youtube/v3/search" + "?part=snippet&q=" + artist + "&type=video&videoCaption=closedCaption&key=" + youtubeApiKey;
+
+    $.ajax({
+        url: queryURL2,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+
+        var iframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${response.items[0].id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+        // Empty the contents, append the new video
+        $("#results").append(iframe);
+
+    });
 };
-    //tastedive Api
-function searchArtists(artist) {
-  var queryURL = "https://tastedive.com/api/similar?q=" + artist + movies + "&app_id=384826-williama-0FSB2P16";
-  $.ajax({
-    url: queryURL,
-    dataType: "jsonp",
-    method: "GET"
-  }).then(function (response) {
-    console.log(response);
-    var artist = $("<h3>").text(response.name);
-    $("#artist").empty();
-  })
-};
-$("#button").on("click", function () {
-  event.preventDefault();
-  var inputArtist = $("#findtext").val().trim();
 
-  searchArtists(inputArtist);
+
+$("#searchButton").on("click", function () {
+    event.preventDefault();
+    var inputArtist = $("#findtext").val().trim();
+
+    searchArtists(inputArtist);
+
 });
+
+
