@@ -83,7 +83,7 @@ body {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    width: 90%;
+    width: 50%;
     background: #fefefe;
     padding: 0.25rem;
     border-radius: 5px;
@@ -140,5 +140,4 @@ body {
 
   #findtext {
     width: 90%;
-
   }
