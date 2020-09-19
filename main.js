@@ -1,17 +1,19 @@
-//var granimInstance = new Granim({
-//element: '#canvas-basic',
-//direction: 'diagonal',
-//isPausedWhenNotInView: true,
-//states : {
-//"default-state": {
-//    gradients: [
-//        ['#ff9966', '#ff5e62'],
-//        ['#00F260', '#0575E6'],
-//        ['#e1eec3', '#f05053']
-//    ]
-// }
-// }
-//});
+
+var granimInstance = new Granim({
+    element: '#canvas-basic',
+    direction: 'diagonal',
+    isPausedWhenNotInView: true,
+    states : {
+        "default-state": {
+            gradients: [
+                ['#ff9966', '#ff5e62'],
+                ['#00F260', '#0575E6'],
+                ['#e1eec3', '#f05053']
+            ]
+        }
+    }
+});
+
 
 function searchArtists(artist) {
 
@@ -22,6 +24,7 @@ function searchArtists(artist) {
     method: "GET"
   }).then(function (response) {
     console.log(response);
+
 
     var upcomingEvents = $("<h1>").text(response.upcoming_event_count + " Upcoming Events");
     var gotoArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
@@ -45,11 +48,10 @@ function searchArtists(artist) {
         
         $("#results").append(results);
       }
+
     })
   })
 }
-  //var queryURL = "https://developers.google.com/artist" + artist + ""
-
 
    $("#searchButton").on("click", function () {
     event.preventDefault();

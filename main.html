@@ -6,34 +6,72 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Sound Finder</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='main.js'></script>
-    <script src="https://kit.fontawesome.com/0d65042968.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header class="hero-search-filter">
         <div class="hero-search-filter-content">
-            <img class="hero-search-filter-logo"
-                src="https://purepng.com/public/uploads/medium/purepng.com-play-music-icon-android-kitkatsymbolsiconsapp-iconsandroid-kitkatandroid-44-721522597670fgv7h.png"
-                alt="music logo" />
-            <form class="hero-search-filter-form" action="">
+            <img class="hero-search-filter-logo" src="https://i.imgur.com/mqxy61X.png" alt="music logo" />
+            <div class=info>
+                <p>Search with your favorite artists, movies, or TV shows to find new things to check out!</p>
+            </div>
+            <form class="hero-search-filter-form">
                 <label for="findtext">Find</label>
                 <input id="findtext" class="hero-search-filter-form-find" type="text" />
-                <button class="button"><i class="fa fa-search"></i></button>
+                <button class="button" id="searchButton"><i class="fa fa-search"></i></button>
             </form>
             <ul class="hero-search-filter-menu menu align-center">
                 <div class="searchby">Search by:</div>
                 </br>
-                <li><button class="buttonArtists"><i class="fas fa-headphones" aria-hidden="true"></i> Artists</a></button></li>
+                <li><button class="buttonArtists"><i class="fas fa-headphones" aria-hidden="true"></i>
+                        Artists</a></button></li>
                 </br>
-                <li><button class="buttonMovies"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Movies</a></button></li>
+                <li><button class="buttonMovies"><i class="fas fa-ticket-alt" aria-hidden="true"></i>
+                        Movies</a></button>
+                </li>
                 </br>
-                <li><button class="buttonTV"><i class="fas fa-tv" aria-hidden="true"></i>TV Shows</a></button></li>
+                <li><button class="buttonTV"><i class="fas fa-tv" aria-hidden="true"></i> TV Shows</a></button></li>
             </ul>
         </div>
     </header>
     </div>
+    <!--results of search-->
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+            <div class="card">
+                <div class="card-header">
+                    <strong>
+                        <i class="fa fa-bookmark-o"></i> Your New Favorites</strong>
+                </div>
+                <div class="card-body" id="results">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--credits-->
+    <div class="row">
+        <div class="col-sm-12">
+            <hr>
+            <h5 class="text-center">
+                <i class="fa fa-bullhorn"></i>
+                <small><em>Made by Carson, Caleb, and William
+                </em></small>
+            </h5>
+
+        </div>
+    </div>
+
+    </div>
+
+  <div id="artist"></div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src='main.js'></script>
+  <script src="https://kit.fontawesome.com/0d65042968.js" crossorigin="anonymous"></script>
 
 </body>
 
