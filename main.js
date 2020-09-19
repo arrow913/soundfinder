@@ -34,8 +34,8 @@ function searchArtists(artist) {
       }
 
         // Empty the contents, append the new artist content
-        $("#artist").empty();
-        $("#artist").append(upcomingEvents, gotoArtist);
+        $("#results").empty();
+        $("#results").append(upcomingEvents, gotoArtist);
     });
 
     // Youtube API Call
