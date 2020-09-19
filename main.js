@@ -1,5 +1,17 @@
-
-
+//var granimInstance = new Granim({
+//element: '#canvas-basic',
+//direction: 'diagonal',
+//isPausedWhenNotInView: true,
+//states : {
+//"default-state": {
+//    gradients: [
+//        ['#ff9966', '#ff5e62'],
+//        ['#00F260', '#0575E6'],
+//        ['#e1eec3', '#f05053']
+//    ]
+// }
+// }
+//});
 
 function searchArtists(artist) {
 
@@ -11,33 +23,37 @@ function searchArtists(artist) {
   }).then(function (response) {
     console.log(response);
 
-
-    var artistName = $("<h1>").text(response.name);
-    var artistURL = $("<a>").attr("href", response.url).append(artistName);
-    var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
+    var upcomingEvents = $("<h1>").text(response.upcoming_event_count + " Upcoming Events");
     var gotoArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
 
     // Empty the contents, append the new artist content
     $("#artist").empty();
-    $("#artist").append(artistURL, upcomingEvents, gotoArtist);
-  })
-};
-    //tastedive Api
-function searchArtists(artist) {
-  var queryURL = "https://tastedive.com/api/similar?q=" + artist + movies + "&app_id=384826-williama-0FSB2P16";
-  $.ajax({
-    url: queryURL,
-    dataType: "jsonp",
-    method: "GET"
-  }).then(function (response) {
-    console.log(response);
-    var artist = $("<h3>").text(response.name);
-    $("#artist").empty();
-  })
-};
-$("#button").on("click", function () {
-  event.preventDefault();
-  var inputArtist = $("#findtext").val().trim();
+    $("#artist").append(upcomingEvents, gotoArtist);
 
-  searchArtists(inputArtist);
-});
+
+    var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-williama-NJI189T2";
+    $.ajax({
+      url: queryURLA,
+      dataType: "jsonp",
+      method: "GET"
+    }).then(function (response) {
+      $("#results").empty();
+          var count = 5 
+      for (var i=0 ;i< count; i++ ){
+        console.log(response.Similar.Results[i].Name);
+        var results = $("<ul>").text(response.Similar.Results[i].Name);
+        
+        $("#results").append(results);
+      }
+    })
+  })
+}
+  //var queryURL = "https://developers.google.com/artist" + artist + ""
+
+
+   $("#searchButton").on("click", function () {
+    event.preventDefault();
+    var inputArtist = $("#findtext").val().trim();
+
+    searchArtists(inputArtist);
+  });
