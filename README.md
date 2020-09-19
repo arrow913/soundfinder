@@ -1,10 +1,13 @@
-# project 1
+# Project 1
 
-This is a website to allow users to use their favorite artists, movies, or TV shows to find songs that relate to them, and discover new artists, along with a Youtube video from that artist.
+This is a website that allows users to use their favorite artists, movies, or TV shows to find songs that relate to them and to discover new artists, along with a Youtube video from that artist.
+
+Here is a link to the deployed project: []
 
 APIs used include:
-Taste dive to discover artists
-YouTube API for video integration
-Songkick for events
+1) Taste Dive for discovering artists
+2) YouTube for video integration
+3) Bandsintown for live event dates and info
 
-We have used Foundations for our CSS Framework and Bideo for the video background.
+
+We have also used Foundations for our CSS Framework and Bideo for the video background.
