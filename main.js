@@ -50,28 +50,30 @@ function searchArtists(artist) {
     });
 
             // Empty the contents, append the new artist content
-            
+
             $("#results").append(upcomingEvents, gotoArtist);
+
+            // Youtube API Call
+            var youtubeApiKey = "AIzaSyBmk_5NIy0Lqp_6usUzPRx-pD3Zk-LRXHY";
+
+            var queryURL2 = "https://www.googleapis.com/youtube/v3/search" + "?part=snippet&q=" + artist + "&type=video&videoCaption=closedCaption&key=" + youtubeApiKey;
+
+            $.ajax({
+                url: queryURL2,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response);
+                var videoid = response.items[0].id.videoId
+                console.log(videoid)
+                var iframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoid}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+                // Empty the contents, append the new video
+                $("#results").append(iframe);
+
+            });
         });
     });
-    // Youtube API Call
-    var youtubeApiKey = "AIzaSyBmk_5NIy0Lqp_6usUzPRx-pD3Zk-LRXHY";
 
-    var queryURL2 = "https://www.googleapis.com/youtube/v3/search" + "?part=snippet&q=" + artist + "&type=video&videoCaption=closedCaption&key=" + youtubeApiKey;
-
-    $.ajax({
-        url: queryURL2,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response);
-        var videoid = response.items[0].id.videoId
-        console.log(videoid)
-        var iframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoid}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-
-        // Empty the contents, append the new video
-        $("#results").append(iframe);
-
-    });
 };
 
 
