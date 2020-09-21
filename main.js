@@ -1,4 +1,5 @@
 
+// Bandsintown API Call
 function searchArtists(artist) {
     $("#results").empty();
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
@@ -50,7 +51,6 @@ function searchArtists(artist) {
     });
 
             // Empty the contents, append the new artist content
-
             $("#results").append(upcomingEvents, gotoArtist);
 
             // Youtube API Call
@@ -69,11 +69,9 @@ function searchArtists(artist) {
 
                 // Empty the contents, append the new video
                 $("#results").append(iframe);
-
             });
         });
     });
-
 };
 
 
@@ -82,8 +80,8 @@ $("#searchButton").on("click", function () {
     var inputArtist = $("#findtext").val().trim();
 
     searchArtists(inputArtist);
-
 });
+
 
 
 var granimInstance = new Granim({
@@ -100,3 +98,4 @@ var granimInstance = new Granim({
         }
     }
 });
+
