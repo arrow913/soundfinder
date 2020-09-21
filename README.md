@@ -16,5 +16,5 @@ Here is a link to the deployed project: [https://arrow913.github.io/prodject/]
 1) HTML
 2) CSS
 3) Javascript
-4 Foundations for external CSS Framework 
+4) Foundations for external CSS Framework 
 5) (TBD) for external Javascript
