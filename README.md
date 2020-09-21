@@ -1,6 +1,6 @@
 # Project 1
 
-![](https://github.com/arrow913/prodject/blob/master/Screen Shot 2020-09-21 at 9.16.35 AM.png)
+![](https://github.com/arrow913/prodject/blob/master/Screen%20Shot%202020-09-21%20at%209.16.35%20AM.png)
 
 ## Overview
 This is a website that allows users to find their favorite music artists, movies, or TV shows by search. It also provides a list of related media as well as a Youtube video. 
