@@ -30,8 +30,25 @@ function searchArtists(artist) {
                 console.log(response.Similar.Results[i].Name);
                 var results = $("<ul>").text(response.Similar.Results[i].Name);
 
-                $("#results").append(results);
-            }
+    var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-williama-NJI189T2";
+    $.ajax({
+      url: queryURLA,
+      dataType: "jsonp",
+      method: "GET"
+    }).then(function (response) {
+      $("#results").empty();
+          var count = 5 
+      for (var i=0 ;i< count; i++ ){
+        console.log(response.Similar.Results[i].Name);
+        var results = $("<ul>").text(response.Similar.Results[i].Name);
+        
+        $("#results").append(results);
+      }
+
+        // Empty the contents, append the new artist content
+        $("#results").empty();
+        $("#results").append(upcomingEvents, gotoArtist);
+    });
 
             // Empty the contents, append the new artist content
             $("#results").append(upcomingEvents, gotoArtist);
@@ -63,5 +80,22 @@ $("#searchButton").on("click", function () {
     var inputArtist = $("#findtext").val().trim();
 
     searchArtists(inputArtist);
+});
+
+
+
+var granimInstance = new Granim({
+    element: '#canvas-basic',
+    direction: 'left-right',
+    isPausedWhenNotInView: true,
+    states : {
+        "default-state": {
+            gradients: [
+                ['#ff9966', '#ff5e62'],
+                ['#00F260', '#0575E6'],
+                ['#e1eec3', '#f05053']
+            ]
+        }
+    }
 });
 
