@@ -8,7 +8,7 @@ This is a website that allows users to find their favorite music artists, movies
 Here is a link to the deployed project: [https://arrow913.github.io/prodject/]
 
 ## APIs used include:
-1) Taste Dive for discovering artists, movies, TV Shows
+1) Taste Dive for discovering artists, movies, and TV Shows
 2) YouTube for video integration
 3) Bandsintown for live event dates and info
 
