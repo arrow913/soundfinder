@@ -1,4 +1,4 @@
-# Project 1
+# Sound Finder
 
 ![](https://github.com/arrow913/prodject/blob/master/Screen%20Shot%202020-09-21%20at%209.16.35%20AM.png)
 
