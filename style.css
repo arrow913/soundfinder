@@ -164,6 +164,23 @@ body {
   opacity: .9;
 }
 
+.card {
+  left: 1.75rem;
+  right: 1.75rem;
+  opacity: 0.90;
+  width: auto;
+}
+
+footer {
+  color: white;
+  text-shadow:
+  3px 3px 0 #000,
+-1px -1px 0 #000,  
+ 1px -1px 0 #000,
+ -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+
 #searchRow {
   background-color: rgba(0, 0, 0, 0);
 }
