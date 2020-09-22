@@ -22,9 +22,14 @@ body {
 }
 
 .info {
-  font-size: 20px;
+  font-size: 24px;
   color: white;
-  font: outline;
+  text-shadow:
+  3px 3px 0 #000,
+-1px -1px 0 #000,  
+ 1px -1px 0 #000,
+ -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
 
 .hero-search-filter-content {
@@ -73,6 +78,7 @@ body {
   font-size: 1.125rem;
   font-weight: normal;
   text-decoration: none;
+  
 }
 
 .hero-search-filter-menu a:hover {
@@ -124,22 +130,24 @@ body {
 .hero-search-filter-form-near:focus {
   border: 0;
   box-shadow: none;
-  
-}
+  }
 
 .searchby {
   color: #fefefe;
   font-weight: bold;
-  font-size: 36px;
-}
-
-#artist {
+  font-size: 65px;
   color: white;
-  text-align: center;
+  text-shadow:
+      3px 3px 0 #000,
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
 }
 
 #findtext {
   width: 90%;
+  font-weight: bold;
 }
 
 #canvas-basic {
