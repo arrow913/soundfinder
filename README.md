@@ -1,4 +1,4 @@
-# Project 1
+# Sound Finder
 
 ![](https://github.com/arrow913/prodject/blob/master/Screen%20Shot%202020-09-21%20at%209.16.35%20AM.png)
 
@@ -17,4 +17,4 @@ Here is a link to the deployed project: [https://arrow913.github.io/prodject/]
 2) CSS
 3) Javascript
 4) Foundations for external CSS Framework 
-5) (TBD) for external Javascript
+5) Granim for external Javascript
