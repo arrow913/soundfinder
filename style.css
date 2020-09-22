@@ -1,6 +1,6 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  /*background-color: #4F4F51;*/
+  background-color: rgba(0, 0, 0, 0);
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -22,9 +22,8 @@ body {
 }
 
 .info {
-  font-size: medium;
+  font-size: 20px;
   color: white;
-  font-weight: bold;
   font: outline;
 }
 
@@ -68,7 +67,6 @@ body {
 
 .hero-search-filter-menu a {
   color: #fefefe;
-  font-weight: bold;
 }
 
 .hero-search-filter-menu a .fa {
@@ -103,7 +101,6 @@ body {
   margin-right: 0.75rem;
   margin-left: 0.75rem;
   color: #8a8a8a;
-  font-weight: bold;
 }
 
 .hero-search-filter-form input,
