@@ -30,50 +30,50 @@ function searchArtists(artist) {
                 console.log(response.Similar.Results[i].Name);
                 var results = $("<ul>").text(response.Similar.Results[i].Name);
 
-    var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-williama-NJI189T2";
-    $.ajax({
-      url: queryURLA,
-      dataType: "jsonp",
-      method: "GET"
-    }).then(function (response) {
-      $("#results").empty();
-          var count = 5 
-      for (var i=0 ;i< count; i++ ){
-        console.log(response.Similar.Results[i].Name);
-        var results = $("<ul>").text(response.Similar.Results[i].Name);
-        
-        $("#results").append(results);
-      }
+                var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-williama-NJI189T2";
+                $.ajax({
+                    url: queryURLA,
+                    dataType: "jsonp",
+                    method: "GET"
+                }).then(function (response) {
+                    $("#results").empty();
+                    var count = 5
+                    for (var i = 0; i < count; i++) {
+                        console.log(response.Similar.Results[i].Name);
+                        var results = $("<ul>").text(response.Similar.Results[i].Name);
 
-        // Empty the contents, append the new artist content
-        $("#results").empty();
-        $("#results").append(upcomingEvents, gotoArtist);
-    });
+                        $("#results").append(results);
+                    }
 
-            // Empty the contents, append the new artist content
-            $("#results").append(upcomingEvents, gotoArtist);
+                    // Empty the contents, append the new artist content
+                    $("#results").empty();
+                    $("#results").append(upcomingEvents, gotoArtist);
+                });
 
-            // Youtube API Call
-            var youtubeApiKey = "AIzaSyBmk_5NIy0Lqp_6usUzPRx-pD3Zk-LRXHY";
+                // Empty the contents, append the new artist content
+                $("#results").append(upcomingEvents, gotoArtist);
 
-            var queryURL2 = "https://www.googleapis.com/youtube/v3/search" + "?part=snippet&q=" + artist + "&type=video&videoCaption=closedCaption&key=" + youtubeApiKey;
+                // Youtube API Call
+                var youtubeApiKey = "AIzaSyBmk_5NIy0Lqp_6usUzPRx-pD3Zk-LRXHY";
 
-            $.ajax({
-                url: queryURL2,
-                method: "GET"
-            }).then(function (response) {
-                console.log(response);
-                var videoid = response.items[0].id.videoId
-                console.log(videoid)
-                var iframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoid}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                var queryURL2 = "https://www.googleapis.com/youtube/v3/search" + "?part=snippet&q=" + artist + "&type=video&videoCaption=closedCaption&key=" + youtubeApiKey;
 
-                // Empty the contents, append the new video
-                $("#results").append(iframe);
-            });
+                $.ajax({
+                    url: queryURL2,
+                    method: "GET"
+                }).then(function (response) {
+                    console.log(response);
+                    var videoid = response.items[0].id.videoId
+                    console.log(videoid)
+                    var iframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoid}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+                    // Empty the contents, append the new video
+                    $("#results").append(iframe);
+                });
+            };
         });
     });
 };
-
 
 $("#searchButton").on("click", function () {
     event.preventDefault();
@@ -88,7 +88,7 @@ var granimInstance = new Granim({
     element: '#canvas-basic',
     direction: 'left-right',
     isPausedWhenNotInView: true,
-    states : {
+    states: {
         "default-state": {
             gradients: [
                 ['#ff9966', '#ff5e62'],
