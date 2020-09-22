@@ -3,7 +3,8 @@
 function searchArtists(artist) {
     $("#results").empty();
     $("#results2").empty();
-
+    $("#upcomingEvents").empty();
+    
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
 
     $.ajax({
