@@ -1,6 +1,6 @@
 body {
-  background-color: rgba(0, 0, 0, 0);
   font-family: 'Roboto', sans-serif;
+  width: 100%;
 }
 
 
@@ -161,7 +161,7 @@ body {
   left: 0;
   z-index: -1;
   overflow: hidden;
-  opacity: 0.5;
+  opacity: .9;
 }
 
 #searchRow {
