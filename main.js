@@ -16,7 +16,7 @@ function searchArtists(artist) {
         // Append the new artist content
         $("#results").append(upcomingEvents, gotoArtist);
 
-        var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-williama-NJI189T2";
+        var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-prodject-5FBU6F6K";
         $.ajax({
             url: queryURLA,
             dataType: "jsonp",
@@ -27,51 +27,31 @@ function searchArtists(artist) {
             for (var i = 0; i < count; i++) {
                 console.log(response.Similar.Results[i].Name);
                 var results = $("<ul>").text(response.Similar.Results[i].Name);
-
-                var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-williama-NJI189T2";
-                $.ajax({
-                    url: queryURLA,
-                    dataType: "jsonp",
-                    method: "GET"
-                }).then(function (response) {
-                    $("#results").empty();
-                    var count = 5
-                    for (var i = 0; i < count; i++) {
-                        console.log(response.Similar.Results[i].Name);
-                        var results = $("<ul>").text(response.Similar.Results[i].Name);
-
-                        $("#results").append(results);
-                    }
-
-                    // Empty the contents, append the new artist content
-                    $("#results").empty();
-                    $("#results").append(upcomingEvents, gotoArtist);
-                });
-
-                // Empty the contents, append the new artist content
-                $("#results").append(upcomingEvents, gotoArtist);
-
-                // Youtube API Call
-                var youtubeApiKey = "AIzaSyBmk_5NIy0Lqp_6usUzPRx-pD3Zk-LRXHY";
-
-                var queryURL2 = "https://www.googleapis.com/youtube/v3/search" + "?part=snippet&q=" + artist + "&type=video&videoCaption=closedCaption&key=" + youtubeApiKey;
-
-                $.ajax({
-                    url: queryURL2,
-                    method: "GET"
-                }).then(function (response) {
-                    console.log(response);
-                    var videoid = response.items[0].id.videoId
-                    console.log(videoid)
-                    var iframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoid}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-
-                    // Empty the contents, append the new video
-                    $("#results").append(iframe);
-                });
             };
+        });
+        // Empty the contents, append the new artist content
+        $("#results").append(upcomingEvents, gotoArtist);
+
+        // Youtube API Call
+        var youtubeApiKey = "AIzaSyDBrUxXa2vD-HgvutwEKgqgiowdM_Ex0zc";
+
+        var queryURL2 = "https://www.googleapis.com/youtube/v3/search" + "?part=snippet&q=" + artist + "&type=video&videoCaption=closedCaption&key=" + youtubeApiKey;
+
+        $.ajax({
+            url: queryURL2,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            var videoid = response.items[0].id.videoId
+            console.log(videoid)
+            var iframe = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${videoid}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+
+            // Empty the contents, append the new video
+            $("#results").append(iframe);
         });
     });
 };
+
 
 
 $("#searchButton").on("click", function () {
