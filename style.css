@@ -159,3 +159,7 @@ body {
 #searchRow {
   background-color: rgba(0, 0, 0, 0);
 }
+
+#upcomingEvents {
+  text-align: center;
+}

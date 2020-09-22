@@ -2,6 +2,8 @@
 // Bandsintown API Call
 function searchArtists(artist) {
     $("#results").empty();
+    $("#results2").empty();
+
     var queryURL = "https://rest.bandsintown.com/artists/" + artist + "?app_id=codingbootcamp";
 
     $.ajax({
@@ -14,23 +16,22 @@ function searchArtists(artist) {
         var gotoArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
 
         // Append the new artist content
-        $("#results").append(upcomingEvents, gotoArtist);
+        $("#upcomingEvents").append(upcomingEvents);
+        $("#upcomingEvents").append(gotoArtist);
 
-        var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-prodject-5FBU6F6K";
+        var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&k=385684-CalebCha-ET3T33C0";
         $.ajax({
             url: queryURLA,
             dataType: "jsonp",
             method: "GET"
         }).then(function (response) {
-            $("#results").empty();
             var count = 5
             for (var i = 0; i < count; i++) {
-                console.log(response.Similar.Results[i].Name);
+                console.log(response);
                 var results = $("<ul>").text(response.Similar.Results[i].Name);
-            };
+                $("#results2").append(results);
+            };         
         });
-        // Empty the contents, append the new artist content
-        $("#results").append(upcomingEvents, gotoArtist);
 
         // Youtube API Call
         var youtubeApiKey = "AIzaSyDBrUxXa2vD-HgvutwEKgqgiowdM_Ex0zc";
