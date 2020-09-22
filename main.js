@@ -10,13 +10,11 @@ function searchArtists(artist) {
     }).then(function (response) {
         console.log(response);
 
-
         var upcomingEvents = $("<h1>").text(response.upcoming_event_count + " Upcoming Events");
         var gotoArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
 
         // Append the new artist content
         $("#results").append(upcomingEvents, gotoArtist);
-
 
         var queryURLA = "https://tastedive.com/api/similar?q=" + artist + "&app_id=384826-williama-NJI189T2";
         $.ajax({
@@ -73,8 +71,8 @@ function searchArtists(artist) {
             };
         });
     });
-});
 };
+
 
 $("#searchButton").on("click", function () {
     event.preventDefault();
@@ -82,21 +80,3 @@ $("#searchButton").on("click", function () {
 
     searchArtists(inputArtist);
 });
-
-
-
-var granimInstance = new Granim({
-    element: '#canvas-basic',
-    direction: 'left-right',
-    isPausedWhenNotInView: true,
-    states: {
-        "default-state": {
-            gradients: [
-                ['#ff9966', '#ff5e62'],
-                ['#00F260', '#0575E6'],
-                ['#e1eec3', '#f05053']
-            ]
-        }
-    }
-});
-
