@@ -16,5 +16,5 @@ Here is a link to the deployed project: [https://arrow913.github.io/prodject/]
 1) HTML
 2) CSS
 3) Javascript
-4) Foundations for external CSS Framework 
-5) Granim for external Javascript
+4) Foundations and Bootstrap for external CSS Frameworks
+5) Granim and jquery for external Javascripts
