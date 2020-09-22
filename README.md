@@ -5,7 +5,7 @@
 ## Overview
 This is a website that allows users to find their favorite music artists, movies, or TV shows by search. It also provides a list of related media as well as a Youtube video. 
 
-Here is a link to the deployed project: [https://arrow913.github.io/prodject/]
+Here is a link to the deployed project: [https://arrow913.github.io/soundfinder/]
 
 ## APIs used include:
 1) Taste Dive for discovering artists, movies, and TV Shows
