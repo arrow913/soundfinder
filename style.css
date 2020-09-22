@@ -1,6 +1,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   /*background-color: #4F4F51;*/
+  background-color: rgba(0, 0, 0, 0);
 }
 
 
@@ -159,6 +160,9 @@ body {
   opacity: 0.5;
 }
 
-#searchRow {
-  background-color: rgba(0, 0, 0, 0);
+.card {
+  left: 1.75rem;
+  right: 1.75rem;
+  opacity: 0.90;
+  width: auto;
 }
