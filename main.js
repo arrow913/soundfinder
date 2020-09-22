@@ -53,7 +53,6 @@ function searchArtists(artist) {
 };
 
 
-
 $("#searchButton").on("click", function () {
     event.preventDefault();
     var inputArtist = $("#findtext").val().trim();
