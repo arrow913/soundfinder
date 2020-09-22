@@ -73,6 +73,7 @@ function searchArtists(artist) {
             };
         });
     });
+});
 };
 
 $("#searchButton").on("click", function () {
