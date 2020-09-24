@@ -35,7 +35,7 @@ function searchArtists(artist) {
         });
 
         // Youtube API Call
-        var youtubeApiKey = "AIzaSyDBrUxXa2vD-HgvutwEKgqgiowdM_Ex0zc";
+        var youtubeApiKey = "AIzaSyD6PzTB02aTikpMqAbRqPEBntFyzr4h8AI";
 
         var queryURL2 = "https://www.googleapis.com/youtube/v3/search" + "?part=snippet&q=" + artist + "&type=video&videoCaption=closedCaption&key=" + youtubeApiKey;
 
