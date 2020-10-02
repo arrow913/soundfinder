@@ -18,6 +18,3 @@ Here is a link to the deployed project: [https://arrow913.github.io/soundfinder/
 3) Javascript
 4) Foundations and Bootstrap for external CSS Frameworks
 5) Granim and jquery for external Javascripts
-
-## Author/s
-Carson Savage, William Arrasmith, Caleb Chaney
